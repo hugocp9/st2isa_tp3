@@ -855,10 +855,97 @@ namespace TP3
         public static void QueryCountAllMoviesWithLetterE()
         {
             var query = from movie in Movies
-                        where (movie.Title.Contains("e"))
+                        where (movie.Title.Contains('e'))
                         select new { Title = movie.Title };
             int cp = query.Count();
             Console.WriteLine($"They are {cp} movies with the letter 'e' in the file");
         }
+        public static void QueryCountAllFInTitles()
+        {
+
+        }
+        public static void QueryHigherBudget()
+        {
+            var query = (from movie in Movies
+                        orderby movie.Budget descending
+                        select new { movie.Title, movie.Budget }).Take(5);
+            foreach (var item in query)
+            {
+                Console.WriteLine($"{item.Title,-50}{item.Budget}");
+            }
+        }
+        public static void QueryLowerBudget()
+        {
+            var query = (from movie in Movies
+                         orderby movie.Budget ascending
+                         select new { movie.Title, movie.Budget }).Take(5);
+            foreach (var item in query)
+            {
+                Console.WriteLine($"{item.Title,-50}{item.Budget}");
+            }
+        }
+        public static void QueryReverseAlphabetic()
+        {
+            var query = (from movie in Movies
+                         orderby movie.Title descending
+                         select new {movie.Title}).Take(11);
+            foreach (var item in query)
+            {
+                Console.WriteLine($"{item.Title}");
+            }
+        }
+        public static void QueryMoviesBeforeDate()
+        {
+            var query = (from movie in Movies
+                         where (movie.ReleaseDate.Year < 1980)
+                         select new { Title = movie.Title, Year = movie.ReleaseDate.ToString() });
+            int count = query.Count();
+            foreach (var item in query)
+            {
+                Console.WriteLine($"{item.Title,-50}{item.Year}");
+            }
+        }
+        public static void QueryAvgTimeVoyelFirstLetter()
+        {
+            var query = (from movie in Movies
+                         where (movie.Title.StartsWith("A") ||
+                                movie.Title.StartsWith("E") ||
+                                movie.Title.StartsWith("I") ||
+                                movie.Title.StartsWith("O") ||
+                                movie.Title.StartsWith("U") ||
+                                movie.Title.StartsWith("Y") )
+                         select new { movie.Title, movie.RunningTime });
+            double runTotal = 0;
+            foreach (var item in query)
+            {
+                runTotal+=item.RunningTime;
+            }
+            runTotal /= query.Count();
+            Console.WriteLine($"Le temps moyen pour un film dont le title commence par une voyelle est {runTotal:F3} min ");
+        }
+        public static void QueryGrpByNbChar()
+        {
+            var query = (from movie in Movies
+                         orderby movie.Title.Length
+                         
+                         select new {title = movie.Title , length = movie.Title.Length });
+            var query2 = (from q in query
+                         group q by q.length into res
+                         select res);
+            
+            foreach (var grouping in query2)
+            {
+                int cp = 0;
+                foreach (var item in grouping)
+                {
+                    cp++;
+                }
+                if (cp < 2) Console.WriteLine($"{grouping.Key} char => {cp} film ");
+                else Console.WriteLine($"{grouping.Key} char => {cp} films "); 
+            }
+         }
+        
+
+
     }
 }
