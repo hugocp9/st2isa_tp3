@@ -927,8 +927,8 @@ namespace TP3
         {
             var query = (from movie in Movies
                          orderby movie.Title.Length
-                         
                          select new {title = movie.Title , length = movie.Title.Length });
+
             var query2 = (from q in query
                          group q by q.length into res
                          select res);
@@ -943,8 +943,57 @@ namespace TP3
                 if (cp < 2) Console.WriteLine($"{grouping.Key} char => {cp} film ");
                 else Console.WriteLine($"{grouping.Key} char => {cp} films "); 
             }
-         }
-        
+        }
+        public static void QueryMeanBBOfAll()
+        {
+            var query = (from movie in Movies
+                         select new { movie.Budget, movie.BoxOffice });
+
+            double avgBudget = 0;
+            double avgBoxOffice = 0;
+
+            foreach (var item in query)
+            {
+                avgBudget += item.Budget;
+                avgBoxOffice += item.BoxOffice;
+            }
+
+            int nbFilms = query.Count();
+            avgBudget /= nbFilms;
+            avgBoxOffice /= nbFilms;
+
+            Console.WriteLine($"average of disney budget films is {avgBudget:F0} $ .");
+            Console.WriteLine($"average of disney box office films is {avgBoxOffice:F0} $ .");
+
+        }
+        public static void QueryGroupedByBBMean()
+        {
+            var query = (from movie in Movies
+                         select new { movie.Budget, movie.BoxOffice });
+
+            double avgBudget = 0;
+            double avgBoxOffice = 0;
+
+            foreach (var item in query)
+            {
+                avgBudget += item.Budget;
+                avgBoxOffice += item.BoxOffice;
+            }
+
+            int nbFilms = query.Count();
+            avgBudget /= nbFilms;
+            avgBoxOffice /= nbFilms;
+        }
+
+        public static void getYear()
+        {
+            var query = (from movie in Movies
+                         select new { movie.ReleaseDate }).Take(1);
+            Console.WriteLine($"{query.ToArray()}");
+
+        }
+
+
 
 
     }
