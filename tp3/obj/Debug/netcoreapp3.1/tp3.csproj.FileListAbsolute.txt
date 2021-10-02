@@ -1,0 +1,13 @@
+/Users/hugovillemade/Developer/VisualStudio/tp3/st2isa_tp3/tp3/bin/Debug/netcoreapp3.1/tp3.deps.json
+/Users/hugovillemade/Developer/VisualStudio/tp3/st2isa_tp3/tp3/bin/Debug/netcoreapp3.1/tp3.runtimeconfig.json
+/Users/hugovillemade/Developer/VisualStudio/tp3/st2isa_tp3/tp3/bin/Debug/netcoreapp3.1/tp3.runtimeconfig.dev.json
+/Users/hugovillemade/Developer/VisualStudio/tp3/st2isa_tp3/tp3/bin/Debug/netcoreapp3.1/tp3.dll
+/Users/hugovillemade/Developer/VisualStudio/tp3/st2isa_tp3/tp3/bin/Debug/netcoreapp3.1/tp3.pdb
+/Users/hugovillemade/Developer/VisualStudio/tp3/st2isa_tp3/tp3/obj/Debug/netcoreapp3.1/tp3.csproj.AssemblyReference.cache
+/Users/hugovillemade/Developer/VisualStudio/tp3/st2isa_tp3/tp3/obj/Debug/netcoreapp3.1/tp3.GeneratedMSBuildEditorConfig.editorconfig
+/Users/hugovillemade/Developer/VisualStudio/tp3/st2isa_tp3/tp3/obj/Debug/netcoreapp3.1/tp3.AssemblyInfoInputs.cache
+/Users/hugovillemade/Developer/VisualStudio/tp3/st2isa_tp3/tp3/obj/Debug/netcoreapp3.1/tp3.AssemblyInfo.cs
+/Users/hugovillemade/Developer/VisualStudio/tp3/st2isa_tp3/tp3/obj/Debug/netcoreapp3.1/tp3.csproj.CoreCompileInputs.cache
+/Users/hugovillemade/Developer/VisualStudio/tp3/st2isa_tp3/tp3/obj/Debug/netcoreapp3.1/tp3.dll
+/Users/hugovillemade/Developer/VisualStudio/tp3/st2isa_tp3/tp3/obj/Debug/netcoreapp3.1/tp3.pdb
+/Users/hugovillemade/Developer/VisualStudio/tp3/st2isa_tp3/tp3/obj/Debug/netcoreapp3.1/tp3.genruntimeconfig.cache

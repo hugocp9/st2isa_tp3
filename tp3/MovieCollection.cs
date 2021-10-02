@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TP3
 {
     public class MovieCollection
     {
-        public List<WaltDisneyMovies> Movies { get; set; } = new List<WaltDisneyMovies>
+        public static List<WaltDisneyMovies> Movies { get; set; } = new List<WaltDisneyMovies>
         {
             new WaltDisneyMovies("Snow White and the Seven Dwarfs", "David Hand", 83.0, 1490000.0, 418000000.0,
                 new DateTime(21 / 12 / 1937)),
@@ -838,6 +839,26 @@ namespace TP3
                 BoxOffice = boxOffice;
                 ReleaseDate = releaseDate;
             }
+        }
+
+        
+
+        public static void QueryCountAllMovies()
+        {
+            var query = from movie in Movies
+                        select new { Title = movie.Title };
+            int cp = query.Count();
+            Console.WriteLine($"They are {cp} movies in the file");
+
+        }
+
+        public static void QueryCountAllMoviesWithLetterE()
+        {
+            var query = from movie in Movies
+                        where (movie.Title.Contains("e"))
+                        select new { Title = movie.Title };
+            int cp = query.Count();
+            Console.WriteLine($"They are {cp} movies with the letter 'e' in the file");
         }
     }
 }
