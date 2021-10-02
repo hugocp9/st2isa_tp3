@@ -26,6 +26,7 @@ namespace tp3
             //TP3.MovieCollection.QueryReverseAlphabetic();
             //Console.WriteLine();
 
+            // Count all the movies made before 1980
             //TP3.MovieCollection.QueryMoviesBeforeDate();
             //Console.WriteLine();
 
@@ -37,9 +38,23 @@ namespace tp3
             //TP3.MovieCollection.QueryGrpByNbChar();
             //Console.WriteLine();
 
-            // calculate average of budget and Box Office of all the films
-            TP3.MovieCollection.QueryMeanBudgetBoxOfficeOfAll();
+            //// calculate the mean of all Budget / Box Office of every movie ever
+            //TP3.MovieCollection.QueryBBMeanOfAll();
+            //Console.WriteLine();
+
+            //// Calculate the mean of all Budget / Box Office of every movie grouped by yearly release date
+            //TP3.MovieCollection.QueryGroupedByBBMean();
+            //Console.WriteLine();
+
+            //// Print all movies with the letter H or W in the title, but not the letter I or T
+            //TP3.MovieCollection.QueryAllMoviesWithCharCondition();
+            //Console.WriteLine();
+
+            // Group all movies made before 1997 by their director, ...
+            TP3.MovieCollection.QueryGroupByDirector();
             Console.WriteLine();
+
+
 
 
             Console.WriteLine("Press any key to exit");
